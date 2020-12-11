@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Dog(color, name, age) {
+		this.color = color;
+		this.name = name;
+		this.age = age;
+	}
+	var myDog = new Dog("흰색","마루",1);
+	//color 프로피터의 enumerable 속성을 false로 설정
+	Object.defineProperty(myDog,'color',{enumerable : false});
+	//객체가 가진 고유 프로피터 중에서 열거 할수 있는 프로피터 이름을 배열에 담아 반환함.
+	document.write(Object.keys(myDog)+"<br>"); //name,age
+	//객체가 가진 모든 고유 프로피터의 이름을 배열에 담아 반환.
+	document.write(Object.getOwnPropertyNames(myDog));//color,name,age
+	//propertyIsEnumerable() 메소드
+	//특정 프로피터가 해당 객체에 존재하고, 열거할수 있는 프로피터인지를 검사.
+	document.write("<p>");
+	document.write("color: "+myDog.propertyIsEnumerable("color")+"<br>"); //false
+	document.write("name: "+myDog.propertyIsEnumerable("name")+"<br>"); //true
+	document.write("age: "+myDog.propertyIsEnumerable("age")+"<br>"); //true
+</script>
+</head>
+<body>
+	<h1>obj04</h1>
+</body>
+</html>

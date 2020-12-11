@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Dog(color, name, age) {
+		this.color = color;
+		this.name = name;
+		this.age = age;
+	}
+	var myDog = new Dog("흰색","마루",1);
+	myDog.famliy = "시베리안 허스키"; //품종에 관한 프로퍼터를 추가
+	myDog.breed = function() {
+		return this.color + " " + this.famliy;
+	}
+	document.write("우리집 강아지는 "+myDog.breed() + "입니다. <p>");
+	delete myDog.age; //프로퍼티를 사용하면 undefind가 된다.
+	document.write("우리집 강아지 나이는 "+myDog.age + "입니다.");
+</script>
+</head>
+<body>
+	<h1>obj03</h1>
+	prototype chain 예제<p>
+</body>
+</html>

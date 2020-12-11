@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(frm.name.value == ""){
+			alert("이름이 뭐니?");
+			frm.name.foucs();
+			return;
+		}
+		if(frm.age.value == ""){
+			alert("나이가 뭐니?");
+			frm.age.foucs();
+			return;
+		}
+		if(isNaN(frm.age.value) == true){ // isNaN() -> 함수안에 요소가 숫자면 false 아니면 true 
+			alert("나이는 숫자로?");
+			frm.age.foucs();
+			return;
+		}
+		var addr = document.getElementById("addr");
+		if(addr.value.length == 0){
+			alert("어디사니?");
+			addr.foucs();
+			return;
+		}
+	/* 	if(document.getElementById("addr").value==""){
+			alert("어디사니?");
+			frm.addr.foucs();
+			return;
+		} */
+	}
+	
+</script>
+</head>
+<body>
+	<h2>입력창</h2>
+	<form action="" name="frm">
+	이름 : <input type="text" name="name"><p>
+	나이 : <input type="text" name="age"><p>
+	주소 : <input type="text" name="addr" id="addr"><p>	
+	<input type="button" value="확인" onclick="chk()"><p>
+	</form>
+</body>
+</html>
